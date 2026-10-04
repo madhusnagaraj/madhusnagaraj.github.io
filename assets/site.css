@@ -1,0 +1,140 @@
+:root {
+  --paper: #FFFFFF;
+  --ink: #1D1B18;
+  --soft: #6E675D;
+  --faint: #A39B8F;
+  --rule: #E6E6E6;
+  --pen: #2B4FC2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.62 Newsreader, Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--faint); }
+a:hover { text-decoration-color: var(--ink); }
+.faint { color: var(--faint); }
+
+/* Layout: margin notes | main column | side column */
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 28px 120px;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1.15fr) minmax(0, 1fr);
+  column-gap: clamp(24px, 4vw, 48px);
+}
+.page > * { grid-column: 2; }
+.page > header { grid-column: 2 / -1; }
+.margin {
+  grid-column: 1;
+  text-align: right;
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: var(--faint);
+  padding-top: 110px;
+}
+.margin.updated { padding-top: 0; align-self: center; }
+.side { grid-column: 3; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 30px 0 0;
+  font: 15px -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+header b { font-weight: 600; }
+header nav a { margin-left: 22px; text-decoration: none; color: var(--soft); }
+header nav a:hover { color: var(--ink); }
+
+/* Intro */
+.intro { align-self: center; padding: 40px 0 20px; }
+.intro h1 { font-weight: 400; font-size: clamp(40px, 5vw, 60px); line-height: 1.08; letter-spacing: -.015em; margin: 0 0 26px; }
+.intro p { margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; max-width: 30em; }
+
+/* The dealt pile of post illustrations */
+.pile-wrap { position: relative; padding-top: 48px; align-self: center; }
+.pile { position: relative; width: 100%; max-width: 440px; aspect-ratio: 440 / 380; }
+.pile a {
+  position: absolute;
+  width: 56%;
+  background: #fff;
+  padding: 8px 8px 34px;
+  text-decoration: none;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 12px 26px rgba(60,40,10,.14);
+  transition: transform .45s cubic-bezier(.2,.9,.3,1.25), opacity .3s;
+}
+.pile a img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #f2f2f2; }
+.pile a span {
+  position: absolute; left: 10px; right: 10px; bottom: 7px;
+  font: italic 14px/1.2 Newsreader, serif; color: var(--soft);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pile a:hover, .pile a:focus-visible { transform: rotate(0) scale(1.06) !important; z-index: 5; }
+.shuffle { margin-top: 6px; background: none; border: 0; font: 13px -apple-system, sans-serif; color: var(--pen); cursor: pointer; padding: 4px 0; }
+.shuffle:hover { text-decoration: underline; }
+
+/* Sections */
+h2 { font-weight: 400; font-size: 28px; letter-spacing: -.01em; margin: 72px 0 18px; }
+
+.prompt { border-top: 1px solid var(--rule); padding: 22px 0 24px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; }
+.prompt.last { border-bottom: 1px solid var(--rule); }
+.prompt h3 { font-weight: 500; font-size: 23px; margin: 0; }
+.prompt p { margin: 6px 0 0; color: var(--soft); font-size: 17px; }
+.prompt .used { font-style: italic; color: var(--ink); }
+.prompt .view { margin-left: 4px; }
+.copy { align-self: start; border: 1px solid var(--ink); background: transparent; border-radius: 6px; padding: 8px 13px; font: 13px -apple-system, sans-serif; cursor: pointer; white-space: nowrap; color: var(--ink); }
+.copy:hover { background: var(--ink); color: var(--paper); }
+.copy.done { background: #E6F0D8; border-color: #7A9A55; color: #2F4A12; }
+
+.repos { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.repos li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.repos .name { font-size: 21px; font-weight: 500; text-decoration: none; }
+.repos .name:hover { text-decoration: underline; }
+.repos .desc { display: block; margin-top: 2px; color: var(--soft); font-size: 17px; }
+.repos .essay { display: inline-block; margin-top: 4px; font-size: 15px; }
+[hidden] { display: none !important; }
+
+blockquote { margin: 40px 0 0; padding: 0; font-size: 27px; line-height: 1.25; font-style: italic; font-weight: 300; }
+blockquote cite { display: block; margin-top: 10px; font: 13px -apple-system, sans-serif; font-style: normal; color: var(--faint); }
+
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { display: grid; grid-template-columns: 96px 1fr; gap: 10px; padding: 7px 0; border-bottom: 1px dotted var(--rule); font-size: 17px; }
+.list .d { font: 12.5px ui-monospace, "SF Mono", Menlo, monospace; color: var(--faint); padding-top: 4px; }
+.list a { text-decoration: none; }
+.list a:hover { text-decoration: underline; }
+.more { margin-top: 12px; font: 14px -apple-system, sans-serif; }
+
+.colophon { margin-top: 110px; padding-top: 22px; border-top: 1px solid var(--rule); font: 14px/1.6 -apple-system, sans-serif; color: var(--soft); }
+
+/* Hover preview for the writing list */
+.peek { position: fixed; width: 240px; pointer-events: none; background: #fff; padding: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.18); opacity: 0; transform: rotate(-2deg) scale(.96); transition: opacity .15s, transform .15s; z-index: 20; }
+.peek img { display: block; width: 100%; }
+.peek.on { opacity: 1; transform: rotate(-2deg) scale(1); }
+
+@media (max-width: 1000px) {
+  .page { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
+  .page > *, .page > header, .margin, .side { grid-column: 1 !important; grid-row: auto !important; }
+  .margin { text-align: left; padding: 0; margin-top: 28px; }
+  .margin.updated { display: none; }
+  .intro { padding: 36px 0 0; }
+  .pile-wrap { padding-top: 24px; }
+  h2 { margin-top: 20px; }
+  header nav a { margin-left: 16px; }
+}
+@media (max-width: 560px) {
+  header { flex-wrap: wrap; gap: 6px 0; }
+  header nav { width: 100%; }
+  header nav a { margin: 0 16px 0 0; font-size: 14px; }
+  .page { padding: 0 18px 100px; }
+}
+@media (hover: none) { .peek { display: none; } }
+@media (prefers-reduced-motion: reduce) { .pile a, .peek { transition: none; } }

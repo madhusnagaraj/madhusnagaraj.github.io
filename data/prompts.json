@@ -1,0 +1,20 @@
+{
+ "prompts": [
+  {
+   "file": "prompts/deal-analyst.txt",
+   "title": "Deal analyst",
+   "when": "For buying from someone who does this every day. It breaks each quote into car, trade, money and options, and tells you what changed.",
+   "note": "Shaped by the car negotiation.",
+   "post": "I Used AI to Negotiate a Car",
+   "order": 1
+  },
+  {
+   "file": "prompts/life-lens.txt",
+   "title": "Life lens",
+   "when": "For a decision I keep circling. It separates the story I'm telling from the facts, and asks what I actually want.",
+   "note": null,
+   "post": null,
+   "order": 2
+  }
+ ]
+}
