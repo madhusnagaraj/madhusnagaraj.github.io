@@ -1,63 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Madhu Nagaraj</title>
-<meta name="description" content="Madhu Nagaraj writes Thinking Through AI, essays from building things with AI. The prompts and code that came out of them.">
-<meta property="og:title" content="Madhu Nagaraj">
-<meta property="og:description" content="Essays, prompts and code from building things with AI.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D1B18'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Thinking Through AI, essays from building things with AI, plus the prompts and code that came out of them.">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-<div class="page">
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <b>Madhu Nagaraj</b>
-  <nav><a href="#prompts">Prompts</a><a href="#code">Code</a><a href="#writing">Writing</a><a href="https://www.madhunagaraj.com">Substack</a></nav>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="nav-brand" href="#top">Madhu Nagaraj</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#prompts" data-nav="prompts" hidden>Prompts</a>
+      <a href="#code" data-nav="code" hidden>Code</a>
+      <a href="#writing">Writing</a>
+      <a class="nav-ext" href="https://www.madhunagaraj.com">Substack <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+    </nav>
+  </div>
 </header>
 
-<div class="margin updated" style="grid-row:2">Last updated<br><span id="updated"></span></div>
-<div class="intro" style="grid-row:2">
-  <h1>Hi, I'm Madhu.</h1>
-  <p>I write <a href="https://www.madhunagaraj.com">Thinking Through AI</a>, essays from building things with AI. Below are the prompts and code that came out of them.</p>
-</div>
-<div class="side pile-wrap" style="grid-row:2">
-  <div class="pile" id="pile" aria-label="Illustrations from recent essays"></div>
-  <button class="shuffle" id="shuffle" type="button">&#8635; deal again</button>
-</div>
+<main id="main">
+  <div class="wrap">
+    <section id="top" class="hero">
+      <div class="hero-intro">
+        <h1>Hi, I'm<br>Madhu.</h1>
+        <p class="lede">I write <a href="https://www.madhunagaraj.com">Thinking Through AI</a>, essays from building things with AI. Below are the prompts and code that came out of them.</p>
+      </div>
+      <div class="hero-pile" id="pile-wrap" hidden>
+        <div class="pile" id="pile" aria-label="Covers from recent essays"></div>
+        <div class="pile-bar">
+          <span class="muted">Covers from recent essays</span>
+          <button class="btn btn-primary btn-wide" id="deal" type="button" hidden>Deal again <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></button>
+        </div>
+      </div>
+    </section>
 
-<div class="margin" style="grid-row:3">I only add one after I've used it on something real.</div>
-<div style="grid-row:3" id="prompts">
-  <h2>Prompts</h2>
-  <div id="prompt-list"></div>
-</div>
+    <section id="prompts" class="section" hidden>
+      <div class="section-head"><span class="num">01</span><h2>Prompts</h2></div>
+      <div class="section-body prompt-grid" id="prompts-list"></div>
+    </section>
+  </div>
 
-<div style="grid-row:4">
-  <blockquote>The day it clicked, my agent tried to approve its own work.<cite>First line of <a href="https://www.madhunagaraj.com/p/an-agent-that-opens-its-own-gate">An Agent That Opens Its Own Gate Has No Gate</a></cite></blockquote>
-</div>
+  <section class="quote" aria-label="Pull quote">
+    <div class="wrap">
+      <blockquote>
+        <p>The day it clicked, my agent tried to approve its own work.</p>
+        <footer>First line of <a href="https://www.madhunagaraj.com/p/an-agent-that-opens-its-own-gate">An Agent That Opens Its Own Gate Has No Gate</a></footer>
+      </blockquote>
+    </div>
+  </section>
 
-<div class="margin" id="code-note" style="grid-row:5">Things I've put out in the open.</div>
-<div style="grid-row:5" id="code">
-  <h2>Code</h2>
-  <ul class="repos" id="repo-list"></ul>
-</div>
+  <div class="wrap">
+    <section id="code" class="section" hidden>
+      <div class="section-head"><span class="num">02</span><h2>Code</h2></div>
+      <ul class="section-body rows" id="repos-list"></ul>
+    </section>
 
-<div style="grid-row:6" id="writing">
-  <h2>Writing</h2>
-  <ul class="list" id="posts"></ul>
-  <noscript><p>The list loads with JavaScript. <a href="https://www.madhunagaraj.com/archive">Browse all essays on Substack</a>.</p></noscript>
-  <div class="more"><a href="https://www.madhunagaraj.com/archive">All essays on Substack &rarr;</a></div>
-</div>
+    <section id="writing" class="section">
+      <div class="section-head"><span class="num">03</span><h2>Writing</h2></div>
+      <div class="section-body">
+        <ol class="rows" id="posts-list"></ol>
+        <div class="cell">
+          <a class="btn btn-secondary btn-wide" href="https://www.madhunagaraj.com/archive">All essays on Substack <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
 
-<div class="colophon" style="grid-row:7">How this site is made: the words are mine. I use AI to help draft and illustrate, and I review and publish every essay myself. The pipeline I use is <a href="https://github.com/madhusnagaraj/blog-pipeline">open source</a>. Plain HTML, no analytics. <span class="faint">Views are my own, not my employer's.</span></div>
+<footer class="wrap site-footer">
+  <h2>How this site is made</h2>
+  <p>The words are mine. I use AI to help draft and illustrate, and I review and publish every essay myself. The pipeline I use is <a href="https://github.com/madhusnagaraj/blog-pipeline">open source</a>. Plain HTML, no analytics. Views are my own, not my employer's.</p>
+</footer>
 
-</div>
-
-<div class="peek" id="peek" aria-hidden="true"><img id="peek-img" alt=""></div>
-<script src="assets/site.js"></script>
+<div class="sr-only" aria-live="polite" id="live"></div>
 </body>
 </html>
