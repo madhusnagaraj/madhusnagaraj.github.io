@@ -25,6 +25,14 @@
    "order": 3
   },
   {
+   "file": "prompts/worry-sorter.txt",
+   "title": "Worry sorter",
+   "when": "For when too many worries are looping at once. It sorts each one into a Task, a Decision, or Weather, and gives each kind one move.",
+   "note": "Built with Claude. A thinking tool, not therapy, and not for a crisis.",
+   "post": null,
+   "order": 3
+  },
+  {
    "file": "prompts/learning-partner.txt",
    "title": "Learning partner",
    "when": "Turns Claude Code or Codex into a coach for getting good at building with AI. It scaffolds the boring parts and makes me write the code that matters. Save it as CLAUDE.md or AGENTS.md in a practice repo.",
