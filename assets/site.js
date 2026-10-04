@@ -109,7 +109,7 @@
 
   function makeCard() {
     var card = el("a", { class: "cover" }, [
-      el("img", { class: "cover-img grayscale", alt: "", loading: "eager", decoding: "async", width: "400", height: "500" }),
+      el("img", { class: "cover-img", alt: "", loading: "eager", decoding: "async", width: "400", height: "500" }),
       el("span", { class: "cover-cap" }, [el("span", { class: "cover-title" }), el("time", { class: "cover-date" })])
     ]);
     card.addEventListener("click", function (e) {
@@ -231,10 +231,10 @@
         el("h3", { text: p.title }),
         p.when ? el("p", { class: "prompt-when", text: p.when }) : null,
         p.note ? el("p", { class: "prompt-note", text: p.note }) : null,
+        post ? el("a", { class: "link prompt-post", href: post.url }, ["Read the post", icon("right")]) : null,
         el("div", { class: "actions" }, [
           btn,
-          el("a", { class: "btn btn-secondary", href: p.file }, ["View", icon("up")]),
-          post ? el("a", { class: "link", href: post.url }, ["Read the post", icon("right")]) : null
+          el("a", { class: "btn btn-secondary", href: p.file }, ["View", icon("up")])
         ])
       ]));
     });
@@ -268,13 +268,13 @@
     list.textContent = "";
     if (!projects.length) { section.hidden = true; document.querySelector('[data-nav="projects"]').hidden = true; return; }
     projects.forEach(function (p) {
-      list.appendChild(el("li", null, [
-        el("div", { class: "repo" }, [
-          el("a", { class: "repo-name", href: p.url }, [p.name, icon("up")]),
-          el("div", { class: "repo-side" }, [
-            p.description ? el("p", { class: "repo-desc", text: p.description }) : null
-          ])
-        ])
+      list.appendChild(el("article", { class: "project" }, [
+        p.image ? el("a", { class: "project-shot", href: p.url, "aria-hidden": "true", tabindex: "-1" }, [
+          el("img", { src: p.image, alt: "", loading: "lazy", decoding: "async", width: "1440", height: "900" })
+        ]) : null,
+        el("h3", null, [el("a", { class: "repo-name", href: p.url }, [p.name, icon("up")])]),
+        (p.what || p.description) ? el("p", { class: "project-what", text: p.what || p.description }) : null,
+        p.experiment ? el("p", { class: "project-exp" }, [el("span", { class: "project-label", text: "The experiment" }), p.experiment]) : null
       ]));
     });
     section.hidden = false;

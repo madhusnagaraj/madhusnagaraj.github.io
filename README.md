@@ -13,7 +13,7 @@ are served from this repo, so the page makes no third-party requests.
 | **Publish an essay** | Nothing. | Within a day |
 | **Release a repo** | On GitHub, add the topic `on-my-site` to the repo. Its **description** is the one-line blurb; put the essay's URL in the repo's **Website** field to get a "Read the essay" link. | Within a day |
 | **Add a prompt** | Add a `.txt` file to `prompts/` (format below). | As soon as you push |
-| **Add or change a project** | Edit `data/projects.json` (name, url, description). The order in the file is the order on the page. | As soon as you push |
+| **Add or change a project** | Edit `data/projects.json`: name, url, image path, what it is, and the experiment. Its screenshot is taken automatically (and retaken weekly). The order in the file is the order on the page. | A few minutes after you push |
 
 To refresh immediately instead of waiting for the daily run: **Actions → Refresh site
 data → Run workflow**.

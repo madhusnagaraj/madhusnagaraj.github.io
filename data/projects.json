@@ -1,25 +1,33 @@
 {
- "_note": "Hand-edited. scripts/refresh.py never touches this file. Order here is the order on the page.",
+ "_note": "Hand-edited. scripts/refresh.py never touches this file. Order here is the order on the page. Screenshots: python3 scripts/project_shots.py (also runs weekly in GitHub Actions).",
  "projects": [
   {
    "name": "Assay",
    "url": "https://assay.genmindz.ai",
-   "description": "Free courses on building AI agents you can trust. Every lesson ends in a lab that runs against real models."
+   "image": "assets/projects/assay.png",
+   "what": "Ten free, hands-on courses on building AI agents you can measure, control and trust.",
+   "experiment": "Can you teach agent reliability with real evals instead of demos? Every lesson ends in a lab that runs against live models, and the results are shown, failures included."
   },
   {
    "name": "CommsCrew",
    "url": "https://commscrew.genmindz.ai",
-   "description": "A four-agent AI crew for the comms manager who is the whole team. A live showcase with a one-click demo, honestly imperfect."
+   "image": "assets/projects/commscrew.png",
+   "what": "A four-agent AI crew for the comms manager who is the whole team: it ghostwrites, routes drafts through legal and PR approvers, and publishes across channels.",
+   "experiment": "How do you build a multi-agent system on a real codebase without fooling yourself about what you shipped? Four specialists with structured handoffs, run as a live demo that is honestly imperfect."
   },
   {
    "name": "Pradhya",
-   "url": "https://pradhya.genmindz.ai",
-   "description": "A free, hands-on AI learning site: a short hour of theory, then practices that each leave you with something built."
+   "url": "https://pradhya.genmindz.ai/home.html",
+   "image": "assets/projects/pradhya.png",
+   "what": "A free learning site with 21 practices on working with Claude, from your first structured prompt to shipping an agent.",
+   "experiment": "Learning by building: about an hour of illustrated first principles, then practices that each leave you with working code you keep."
   },
   {
    "name": "The Grand Tour",
    "url": "https://trip.genmindz.ai",
-   "description": "A travel journal rebuilt from my camera roll with an AI copilot, with a fold-out map and a log of how AI ran the trip."
+   "image": "assets/projects/grand-tour.png",
+   "what": "A travel journal of 24 stops in ten countries, with a fold-out map and a food log.",
+   "experiment": "Rebuilt from my camera roll: AI read photo times and places, grouped them into stops, and asked me about what I had forgotten. The Copilot Log shows how AI helped run the trip."
   }
  ]
 }
