@@ -262,9 +262,38 @@
     document.querySelector('[data-nav="code"]').hidden = false;
   }
 
+  /* ---------- projects (hand-edited data/projects.json) ---------- */
+  function renderProjects(projects) {
+    var section = $("projects"), list = $("projects-list");
+    list.textContent = "";
+    if (!projects.length) { section.hidden = true; document.querySelector('[data-nav="projects"]').hidden = true; return; }
+    projects.forEach(function (p) {
+      list.appendChild(el("li", null, [
+        el("div", { class: "repo" }, [
+          el("a", { class: "repo-name", href: p.url }, [p.name, icon("up")]),
+          el("div", { class: "repo-side" }, [
+            p.description ? el("p", { class: "repo-desc", text: p.description }) : null
+          ])
+        ])
+      ]));
+    });
+    section.hidden = false;
+    document.querySelector('[data-nav="projects"]').hidden = false;
+  }
+
+  /* Number the visible sections 01, 02, ... so hidden ones never leave gaps. */
+  function numberSections() {
+    var n = 0;
+    document.querySelectorAll("section.section").forEach(function (s) {
+      var num = s.querySelector(".num");
+      if (!num) return;
+      num.textContent = s.hidden ? "" : String(++n).padStart(2, "0");
+    });
+  }
+
   /* ---------- boot ---------- */
   function init() {
-    Promise.all([getJSON("data/posts.json"), getJSON("data/prompts.json"), getJSON("data/repos.json")]).then(function (d) {
+    Promise.all([getJSON("data/posts.json"), getJSON("data/prompts.json"), getJSON("data/repos.json"), getJSON("data/projects.json")]).then(function (d) {
       var posts = ((d[0] && d[0].posts) || [])
         .filter(function (p) { return p && p.title && p.url; })
         .sort(function (a, b) { return String(b.date || "").localeCompare(String(a.date || "")); });
@@ -282,6 +311,8 @@
       renderPile(posts.filter(function (p) { return typeof p.cover === "string" && p.cover.trim(); }));
       renderPrompts(prompts, posts);
       renderRepos(repos);
+      renderProjects(((d[3] && d[3].projects) || []).filter(function (p) { return p && p.name && p.url; }));
+      numberSections();
     });
     $("deal").addEventListener("click", deal);
   }

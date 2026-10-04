@@ -1,0 +1,20 @@
+{
+ "_note": "Hand-edited. scripts/refresh.py never touches this file. Order here is the order on the page.",
+ "projects": [
+  {
+   "name": "Assay",
+   "url": "https://assay.genmindz.ai",
+   "description": "Free courses on building AI agents you can trust. Every lesson ends in a lab that runs against real models."
+  },
+  {
+   "name": "CommsCrew",
+   "url": "https://commscrew.genmindz.ai",
+   "description": "A four-agent AI crew for the comms manager who is the whole team. A live showcase with a one-click demo, honestly imperfect."
+  },
+  {
+   "name": "Pradhya",
+   "url": "https://pradhya.genmindz.ai",
+   "description": "A free, hands-on AI learning site: a short hour of theory, then practices that each leave you with something built."
+  }
+ ]
+}
