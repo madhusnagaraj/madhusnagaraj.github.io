@@ -6,7 +6,7 @@ Personal site of Madhu Nagaraj: the prompts and code that come out of
 Plain HTML, CSS and a little JavaScript. No build step, no analytics. Fonts and images
 are served from this repo, so the page makes no third-party requests.
 
-## Upkeep: the only three things you ever do
+## Upkeep: the only things you ever do
 
 | When you… | Do this | Shows up |
 |---|---|---|

@@ -15,6 +15,11 @@
    "name": "Pradhya",
    "url": "https://pradhya.genmindz.ai",
    "description": "A free, hands-on AI learning site: a short hour of theory, then practices that each leave you with something built."
+  },
+  {
+   "name": "The Grand Tour",
+   "url": "https://trip.genmindz.ai",
+   "description": "A travel journal rebuilt from my camera roll with an AI copilot, with a fold-out map and a log of how AI ran the trip."
   }
  ]
 }
