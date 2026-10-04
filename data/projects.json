@@ -1,5 +1,5 @@
 {
- "_note": "Hand-edited. scripts/refresh.py never touches this file. Order here is the order on the page. Screenshots: python3 scripts/project_shots.py (also runs weekly in GitHub Actions).",
+ "_note": "Hand-edited. scripts/refresh.py never touches this file. Order here is the order on the page. Screenshots: python3 scripts/project_shots.py (also runs weekly in GitHub Actions). Set \"refresh_screenshot\": false for a site that never changes (or never finishes loading headlessly).",
  "projects": [
   {
    "name": "Assay",
@@ -27,7 +27,8 @@
    "url": "https://trip.genmindz.ai",
    "image": "assets/projects/grand-tour.png",
    "what": "A travel journal of 24 stops in ten countries, with a fold-out map and a food log.",
-   "experiment": "Rebuilt from my camera roll: AI read photo times and places, grouped them into stops, and asked me about what I had forgotten. The Copilot Log shows how AI helped run the trip."
+   "experiment": "Rebuilt from my camera roll: AI read photo times and places, grouped them into stops, and asked me about what I had forgotten. The Copilot Log shows how AI helped run the trip.",
+   "refresh_screenshot": false
   }
  ]
 }

@@ -35,7 +35,7 @@ def main():
     projects = json.load(open(os.path.join(ROOT, "data", "projects.json")))["projects"]
     failed = 0
     for p in projects:
-        if not p.get("image"):
+        if not p.get("image") or p.get("refresh_screenshot") is False:
             continue
         out = os.path.join(ROOT, p["image"])
         with tempfile.TemporaryDirectory() as tmp:
