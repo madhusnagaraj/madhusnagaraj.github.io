@@ -40,10 +40,18 @@ def main():
         out = os.path.join(ROOT, p["image"])
         with tempfile.TemporaryDirectory() as tmp:
             shot = os.path.join(tmp, "shot.png")
-            cmd = [chrome, "--headless=new", "--disable-gpu", "--no-sandbox", "--hide-scrollbars",
-                   "--window-size=1440,900", "--virtual-time-budget=9000",
-                   f"--screenshot={shot}", p["url"]]
-            subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=90)
+            # Pages that never go idle (live maps, streams) can stall headless Chrome,
+            # so try a full load first, then a short one, and never crash on a timeout.
+            for budget, limit in ((9000, 60), (2500, 40)):
+                cmd = [chrome, "--headless=new", "--disable-gpu", "--no-sandbox", "--hide-scrollbars",
+                       "--window-size=1440,900", f"--virtual-time-budget={budget}",
+                       f"--screenshot={shot}", p["url"]]
+                try:
+                    subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=limit)
+                except subprocess.TimeoutExpired:
+                    continue
+                if os.path.exists(shot) and os.path.getsize(shot) > 10_000:
+                    break
             if os.path.exists(shot) and os.path.getsize(shot) > 10_000:
                 os.makedirs(os.path.dirname(out), exist_ok=True)
                 shutil.move(shot, out)
