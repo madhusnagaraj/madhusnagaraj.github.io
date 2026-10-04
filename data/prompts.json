@@ -15,6 +15,22 @@
    "note": null,
    "post": null,
    "order": 2
+  },
+  {
+   "file": "prompts/first-principles-teacher.txt",
+   "title": "First-principles teacher",
+   "when": "For when I want to actually understand a topic, not skim it. It rebuilds the idea from base truths and corrects my premise before answering.",
+   "note": null,
+   "post": null,
+   "order": 3
+  },
+  {
+   "file": "prompts/learning-partner.txt",
+   "title": "Learning partner",
+   "when": "Turns Claude Code or Codex into a coach for getting good at building with AI. It scaffolds the boring parts and makes me write the code that matters. Save it as CLAUDE.md or AGENTS.md in a practice repo.",
+   "note": null,
+   "post": null,
+   "order": 4
   }
  ]
 }
