@@ -1,3 +1,22 @@
 {
- "repos": []
+ "repos": [
+  {
+   "name": "agent-loop-starter",
+   "url": "https://github.com/madhusnagaraj/agent-loop-starter",
+   "description": "A starter kit for an autonomous coding loop you can trust: narrow least-privilege agents over GitHub issue labels, human-gated, safety enforced below the agent.",
+   "essay": "https://www.madhunagaraj.com/p/how-to-set-up-an-agent-software-factory"
+  },
+  {
+   "name": "blog-pipeline",
+   "url": "https://github.com/madhusnagaraj/blog-pipeline",
+   "description": "The agent pipeline behind my blog: it takes an idea to a Substack draft, then stops. Publishing stays human.",
+   "essay": "https://www.madhunagaraj.com/p/language-was-the-barrier-it-isnt"
+  },
+  {
+   "name": "agent-skills-bundle",
+   "url": "https://github.com/madhusnagaraj/agent-skills-bundle",
+   "description": "Four consultative Claude Code skills for building agents: agent-architect, tool-designer, context-engineer, agent-evaluator",
+   "essay": "https://www.madhunagaraj.com/p/skills-that-build-agents"
+  }
+ ]
 }
