@@ -1,6 +1,12 @@
 {
- "generated_at": "2026-10-24",
+ "generated_at": "2026-10-25",
  "posts": [
+  {
+   "title": "How to Build a Personal Finance Manager With Claude",
+   "date": "2026-10-25",
+   "url": "https://www.madhunagaraj.com/p/how-to-build-a-personal-finance-manager",
+   "cover": "assets/covers/how-to-build-a-personal-finance-manager.jpg"
+  },
   {
    "title": "Task, Decision, or Weather",
    "date": "2026-10-18",
