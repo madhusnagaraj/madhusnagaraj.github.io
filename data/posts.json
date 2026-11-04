@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03",
+ "generated_at": "2026-11-04",
  "posts": [
   {
    "title": "How to Build a Personal Finance Manager With Claude",
@@ -138,18 +138,6 @@
    "date": "2026-03-01",
    "url": "https://www.madhunagaraj.com/p/words-for-the-long-road",
    "cover": "assets/covers/words-for-the-long-road.jpg"
-  },
-  {
-   "title": "The Evolving Developer",
-   "date": "2026-02-23",
-   "url": "https://www.madhunagaraj.com/p/the-evolving-developer",
-   "cover": null
-  },
-  {
-   "title": "Becoming Someone You Don’t Lose",
-   "date": "2026-02-22",
-   "url": "https://www.madhunagaraj.com/p/the-last-step-of-becoming-an-adult",
-   "cover": "assets/covers/the-last-step-of-becoming-an-adult.jpg"
   }
  ]
 }
